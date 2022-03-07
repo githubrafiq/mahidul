@@ -1,0 +1,65 @@
+@font-face {
+    font-family: robotoLight;
+    src: url(fonts/roboto.light.ttf);
+  }
+
+  @font-face {
+    font-family: robotoBold;
+    src: url(fonts/roboto.bold.ttf);
+  }
+
+body{
+    background-color: rgb(240,240,240);
+    font-family: robotoLight;
+    color:rgb(92, 89, 89);
+}
+
+
+
+
+.mysection{
+    background-color: white;
+    border: 4px solid rgb(240,240,240);
+}
+
+.mysection:hover{
+    border: 4px solid rgb(132, 216, 132);
+}
+
+.greenstep{
+    margin: 5px auto;
+    width: 50px;
+    height: 2px;
+    background-color: rgb(105, 199, 105);
+}
+
+.gap{
+    height: 150px;
+}
+
+.mybtn{
+    border: none;
+    padding: 15px 30PX;
+    background-color:rgb(55, 194, 55);
+    color: white;
+    border-radius: 30px;
+}
+
+.mybtn:hover{
+    background-color: rgb(66, 173, 66);
+}
+
+.linkbtn{
+    background-color:rgb(119, 235, 119);
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 50%;
+}
+
+.linkbtn:hover{
+    background-color: rgb(66, 173, 66);
+}
+
+
