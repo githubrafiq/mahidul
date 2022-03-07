@@ -1,0 +1,28 @@
+{% extends 'crud/base.html' %}
+{% load static %}
+{% block content %}
+<div class="gap"></div>
+    <div class="greenstep"></div>
+    <h2 class="text-center mb-5">Wanna <span style="font-family: robotoBold;">Start Work</span> With Me? </h2>
+ <h3 class="mb-5">Information Please</h3>
+            <form action="#">
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control p-2" id="name" placeholder="Your Name" name="name">
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="email" class="form-control p-2" id="email" placeholder="Your Email" name="email">
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control p-2" id="phone" placeholder="Your Phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control form" id="message" placeholder="Write a Message" name="message"
+                        rows="10"></textarea>
+                </div>
+
+                <input type="submit" value="SEND MESSAGE" class="mybtn mt-5">
+            </form>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'crud/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Resume -->
+
+    <div class="row">
+        <!-- Education -->
+        <div class="col-md-6">
+            <h2 class="mt-4 mb-4 p-2">Education</h2>
+            {% for edu in educations %}
+                <div class="m-2 p-4 bg-light mysection">
+                    <p class="small text-muted">{{ edu.date_from }}-{{edu.date_to}}</p>
+                    <h4>{{ edu.level }}</h4>
+                    <p class="small text-muted">{{ edu.bio }}</p>
+                    <h6>{{ edu.institute }}, {{edu.location}}</h6>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Experience -->
+        <div class="col-md-6">
+            <h3 class="mt-4 mb-4 p-2">Experience</h3>
+
+            {% for exp in experiences %}
+                <div class="m-2 p-4 bg-light mysection">
+                    <p class="small text-muted">{{ exp.date_from }}-{{ exp.date_to }}</p>
+                    <h4>{{ exp.job_title }}</h4>
+                    <p class="small text-muted">{{ exp.subjects }}</p>
+                    <h6>{{ exp.company }}</h6>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+    <!-- Form and contact details -->
+
+    <div class="gap"></div>
+    <div class="greenstep mt-5"></div>
+    <h2 class="text-center mb-5">Wanna <span style="font-family: robotoBold;">Start Work</span> With Me? </h2>
+
+    <div class="row">
+        <!-- Form -->
+        <div class="col-md-8 mb-5">
+            <h3 class="mb-5">Information Please</h3>
+            <form action="#">
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control p-2" id="name" placeholder="Your Name" name="name">
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="email" class="form-control p-2" id="email" placeholder="Your Email" name="email">
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control p-2" id="phone" placeholder="Your Phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control form" id="message" placeholder="Write a Message" name="message"
+                        rows="10"></textarea>
+                </div>
+
+                <input type="submit" value="SEND MESSAGE" class="mybtn mt-5">
+            </form>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="col-md-4">
+            <h3 class="mb-5">My Contact Details</h3>
+
+            {% if details %}
+            {% for details in details %}
+                <div class="mb-3">
+                    <b><small>EMAIL</small></b><br>
+                    <small>{{ details.email }}</small>
+                </div>
+                <div class="mb-3">
+                    <b><small>PHONE</small></b><br>
+                    <small>{{ details.phone }}</small>
+                </div>
+                <div class="mb-3">
+                    <b><small>ADDRESS</small></b><br>
+                    <small>
+                       {{ details.address }}
+                    </small>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
