@@ -6,8 +6,8 @@ from .models import Education, Experience, Contact
 
 context = {
     'educations': Education.objects.all(),
-    'experiences': Experience.objects.all(),
     'contacts': Contact.objects.all(),
+    'experiences': Experience.objects.all(),
 }
 
 
@@ -28,7 +28,7 @@ def message(request):
 
 
 def contact(request):
-    return render(request, 'crud/contact.html', context)
+    return render(request, 'crud/contact.html', {'contacts': Contact.objects.all()})
 
 
 # _____________________________create_____________________________
