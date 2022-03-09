@@ -1,0 +1,27 @@
+{% extends 'crud/base.html' %}
+{% load static %}
+{% block content %}
+
+<form class="m-auto bg-light p-md-4" action="" method="post" style="max-width: 600px">
+    <fieldset>
+    <legend><h3>New institute Details</h3></legend>
+    {% csrf_token %}
+    <div class="mb-3 mt-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email"  class="form-control" id="email" placeholder="E.g. mahidulmoon@gmail.com" name="email" autofocus>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label for="phone" class="form-label">Phone:</label>
+        <input type="text" class="form-control" id="phone" placeholder="E.g. +8801771042196" name="phone" >
+      </div>
+
+      <div class="mb-3 mt-3">
+        <label for="address" class="form-label">Address:</label>
+        <input type="text"  class="form-control" id="address" placeholder="E.g. YounusKhan's scholar's Garden Ashulia Savar, Dhaka." name="address">
+      </div>
+    <button type="submit" class="btn  btn-outline-primary">Submit</button>
+    <a href="{% url 'crud:home' %}" class="btn  btn-outline-danger">Cancel</a>
+    </fieldset>
+  </form>
+{% endblock %}

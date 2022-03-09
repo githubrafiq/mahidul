@@ -25,7 +25,7 @@ class Experience(models.Model):
         return self.job_title
 
 
-class Details(models.Model):
+class Contact(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=30)
     address = models.CharField(max_length=100)

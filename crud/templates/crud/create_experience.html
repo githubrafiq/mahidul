@@ -1,0 +1,37 @@
+{% extends 'crud/base.html' %}
+{% load static %}
+{% block content %}
+    
+<form class="m-auto bg-light p-md-4" action="" method="post" style="max-width: 600px">
+    <fieldset>
+    <legend><h3>Add New Experience</h3></legend>
+    {% csrf_token %}
+    <div class="mb-3 mt-3">
+      <label for="job_title " class="form-label">job_title :</label>
+      <input type="text"  class="form-control" id="job_title" placeholder="E.g. Software Development Engineer" name="job_title" autofocus>
+    </div>
+    
+    <div class="mb-3 mt-3">
+        <label for="subjects" class="form-label">subjects:</label>
+        <input type="text" class="form-control" id="subjects" placeholder="E.g. Reactjs, Python, Django" name="subjects" >
+      </div>
+    
+      <div class="mb-3 mt-3">
+        <label for="company" class="form-label">company:</label>
+        <input type="text"  class="form-control" id="company" placeholder="E.g. Datasoft Systems Bangladesh, LTD" name="company">
+      </div>
+
+      <div class="mb-3 mt-3">
+        <label for="date_from" class="form-label"> Starting Date:</label>
+        <input type="date" class="form-control" id="date_from" name="date_from" >
+      </div>
+    
+      <div class="mb-3 mt-3">
+        <label for="date_to" class="form-label"> Starting Date:</label>
+        <input type="date" class="form-control" id="date_to" name="date_to">
+      </div>
+    <button type="submit" class="btn  btn-outline-primary">Submit</button>
+    <a href="{% url 'crud:home' %}" class="btn  btn-outline-danger">Cancel</a>
+    </fieldset>
+  </form>
+{% endblock %}

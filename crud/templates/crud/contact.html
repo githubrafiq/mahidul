@@ -4,23 +4,30 @@
 <div class="gap"></div>
     <div class="greenstep"></div>
     <h2 class="text-center mb-5">Wanna <span style="font-family: robotoBold;">Start Work</span> With Me? </h2>
-<h3 class="mb-5">My Contact Details</h3>
-{% if details %}
-{% for details in details %}
+
+<div class="col-md-4">
+    <h3 class="mb-5">My Contact Details</h3>
     <div class="mb-3">
         <b><small>EMAIL</small></b><br>
-        <small>{{ details.email }}</small>
+        {% for contact in contacts %}
+        <small>{{ contact.email }}</small><br>
+        {% endfor %}
     </div>
     <div class="mb-3">
         <b><small>PHONE</small></b><br>
-        <small>{{ details.phone }}</small>
+        {% for contact in contacts %}
+        <small>{{ contact.phone }}</small><br>
+        {% endfor %}
     </div>
     <div class="mb-3">
         <b><small>ADDRESS</small></b><br>
+        {% for contact in contacts %}
         <small>
-           {{ details.address }}
+            {{ contact.address }}<br>
         </small>
+        {% endfor %}
     </div>
-    {% endfor %}
-{% endif %}
+    <a href="{% url 'crud:create_contact' %}" class="btn btn-outline-success mt-1">Add More</a>
+</div>
+
 {% endblock %}

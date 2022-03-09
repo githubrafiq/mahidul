@@ -1,13 +1,12 @@
-{% extends 'crud/base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'crud/base.html' %} {% load static %} {% block content %}
 <h2 class="mt-4 mb-4 p-2">Education</h2>
 {% for edu in educations %}
 <div class="m-2 p-4 bg-light mysection">
-    <p class="small text-muted">{{ edu.date_from }}-{{edu.date_to}}</p>
-    <h4>{{ edu.level }}</h4>
-    <p class="small text-muted">{{ edu.bio }}</p>
-    <h6>{{ edu.institute }}, {{edu.location}}</h6>
+  <p class="small text-muted">{{ edu.date_from }}-{{edu.date_to}}</p>
+  <h4>{{ edu.level }}</h4>
+  <p class="small text-muted">{{ edu.bio }}</p>
+  <h6>{{ edu.institute }}, {{edu.location}}</h6>
 </div>
 {% endfor %}
+<a href="{% url 'crud:create_contact' %}" class="btn btn-outline-success mt-1">Add More</a>
 {% endblock %}

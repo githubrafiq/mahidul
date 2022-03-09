@@ -1,13 +1,14 @@
-{% extends 'crud/base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'crud/base.html' %} {% load static %} {% block content %}
 <h3 class="mt-4 mb-4 p-2">Experience</h3>
 {% for exp in experiences %}
-                <div class="m-2 p-4 bg-light mysection">
-                    <p class="small text-muted">{{ exp.date_from }}-{{ exp.date_to }}</p>
-                    <h4>{{ exp.job_title }}</h4>
-                    <p class="small text-muted">{{ exp.subjects }}</p>
-                    <h6>{{ exp.company }}</h6>
-                </div>
-            {% endfor %}
+<div class="m-2 p-4 bg-light mysection">
+  <p class="small text-muted">{{ exp.date_from }}-{{ exp.date_to }}</p>
+  <h4>{{ exp.job_title }}</h4>
+  <p class="small text-muted">{{ exp.subjects }}</p>
+  <h6>{{ exp.company }}</h6>
+</div>
+{% endfor %}
+<a href="{% url 'crud:create_contact' %}" class="btn btn-outline-success mt-1"
+  >Add More</a
+>
 {% endblock %}
