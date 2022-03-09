@@ -74,23 +74,23 @@
             <h3 class="mb-5">My Contact Details</h3>
                 <div class="mb-3">
                     <b><small>EMAIL</small></b><br>
-                    {% for contact in contacts %}
-                    <small>{{ contact.email }}</small><br>
+                    {% for c in contacts %}
+                    <small>{{ c.email }}</small><br>
                     {% endfor %}
 
                 </div>
                 <div class="mb-3">
                     <b><small>PHONE</small></b><br>
-                    {% for contact in contacts %}
-                    <small>{{ contact.phone }}</small><br>
+                    {% for c in contacts %}
+                    <small>{{ c.phone }}</small><br>
                     {% endfor %}
                 </div>
                 <div class="mb-3">
                     
                     <b><small>ADDRESS</small></b><br>
-                    {% for contact in contacts %}
+                    {% for c in contacts %}
                     <small>
-                       {{ contact.address }}<br>
+                       {{ c.address }}<br>
                     </small>
                     {% endfor %}
                 </div>
